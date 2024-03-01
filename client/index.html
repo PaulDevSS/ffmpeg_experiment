@@ -86,7 +86,7 @@
       const formData = new FormData()
       formData.append("vdo_file", file_upload[0])
 
-      fetch('https://fc69-1-20-186-20.ngrok-free.app/upload', {
+      fetch('http://localhost:3000/upload', {
         method: "POST",
         body: formData,
       })
