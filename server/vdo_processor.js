@@ -12,8 +12,8 @@ ffmpeg.setFfprobePath(pathToFfprobe.path);
 function getVDOInfomation(metadata) {
 
   const format = metadata.format
-  const vdo = metadata.streams[0]
-  const audio = metadata.streams[1]
+  const vdo = (metadata.streams[0]['codec_type'] === 'video') ? metadata.streams[0] : metadata.streams[1]
+  const audio = (metadata.streams[0]['codec_type'] === 'audio') ? metadata.streams[0] : metadata.streams[1]
   console.log(getFilename(format.filename), format.format_name, format.duration, format.size);
 
   const name = getFilename(format.filename);
