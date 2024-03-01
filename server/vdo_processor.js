@@ -125,4 +125,10 @@ function localToBase64(dir, filename) {
   }
 }
 
-module.exports = { getMetadata, getVDOInfomation, getThumbnails };
+function removeProcessAssets(filename) {
+
+  fs.unlinkSync('assets/upload/'+filename)
+  fs.unlinkSync('assets/thumbnail/tn.png')
+}
+
+module.exports = { getMetadata, getVDOInfomation, getThumbnails, removeProcessAssets };

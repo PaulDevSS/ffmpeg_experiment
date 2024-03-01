@@ -2,7 +2,7 @@ const express = require('express')
 const fileUpload = require('express-fileupload')
 const cors = require('cors')
 const app = express()
-const { getMetadata, getVDOInfomation, getThumbnails } = require("./vdo_processor");
+const { getMetadata, getVDOInfomation, getThumbnails, removeProcessAssets } = require("./vdo_processor");
 
 app.use(fileUpload());
 app.use(cors())
@@ -30,7 +30,15 @@ app.post('/upload', (req, res) => {
     console.log(output);
     res.status(200).send(output);
 
+    removeProcessAssets(vdo_file.name)
+
   });
+
+})
+
+app.get('/', (req, res) => {
+
+  res.send('Hi there !');
 
 })
 

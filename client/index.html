@@ -4,7 +4,7 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Media Generator</title>
+  <title>FFMPEG EXPERIMENT</title>
 
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -86,7 +86,7 @@
       const formData = new FormData()
       formData.append("vdo_file", file_upload[0])
 
-      fetch('http://localhost:3000/upload', {
+      fetch('https://fc69-1-20-186-20.ngrok-free.app/upload', {
         method: "POST",
         body: formData,
       })
